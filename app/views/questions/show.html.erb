@@ -1,0 +1,12 @@
+<h1>Question</h1>
+<%= link_to "Edit Question", edit_question_path(@question) %>
+<%= link_to "Delete Question", @question, method: :delete, data: { confirm: "Are You Sure?" },class: 'btn' %>
+<h4><%=@question.title %></h4>
+<p><%=@question.description %></p>
+
+<%= link_to "Post Answer", new_question_answer_path(@question) %>
+<ul>
+<% @answers.each do |answer| %>
+  <li><%=answer.description%></li>
+<%end%>
+</ul>

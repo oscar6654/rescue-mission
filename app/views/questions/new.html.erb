@@ -1,0 +1,10 @@
+<h1>Create Question</h1>
+<%=form_for(@question) do |f| %>
+  <label for="title">Title</label>
+  <%= f.text_field :title, type: "text"%>
+  <label for="description">Description</label>
+  <%= f.text_field :description, type: "text"%>
+
+
+  <%= submit_tag "Create Question", class: 'btn' %>
+<%end%>
