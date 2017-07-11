@@ -7,6 +7,6 @@
 <%= link_to "Post Answer", new_question_answer_path(@question) %>
 <ul>
 <% @answers.each do |answer| %>
-  <li><%=answer.description%></li>
+  <li><%=answer.description%> <%=link_to "Edit", edit_answer_path(answer)%></li>
 <%end%>
 </ul>
