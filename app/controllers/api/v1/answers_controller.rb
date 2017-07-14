@@ -5,7 +5,7 @@ class Api::V1::AnswersController < ApplicationController
   end
   def show
     @question = Question.find(params[:id])
-    render json: @question.answers
+    render json: @question.answers, adapter: :json
   end
   def create
     data = JSON.parse(request.body.read)

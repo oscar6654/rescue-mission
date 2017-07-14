@@ -1,0 +1,9 @@
+<h1>Edit Answer</h1>
+<%=form_for(@answer) do |f| %>
+
+  <label for="description">Answer</label>
+  <%= f.text_field :description, type: "text"%>
+
+
+  <%= submit_tag "Edit Answer", class: 'btn' %>
+<%end%>

@@ -5,4 +5,5 @@ class QuestionSerializer < ActiveModel::Serializer
   def answer_title
     object.answers.where(question_id: :id)
   end
+
 end

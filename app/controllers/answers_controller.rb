@@ -13,7 +13,22 @@ class AnswersController < ApplicationController
       redirect_to '/questions', notice: "Answer Not Submitted"
     end
   end
-
+  
+  def edit
+    # @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:id])
+    # binding.pry
+  end
+  def update
+    # @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:id])
+    # binding.pry
+    if @answer.update_attributes(answer_params)
+      redirect_to '/questions', notice: "Answer Updated"
+    else
+      redirect_to '/questions', notice: "Answer Not Updated"
+    end
+  end
   private
   def answer_params
     params.require(:answer).permit(:description)

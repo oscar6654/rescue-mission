@@ -49,8 +49,8 @@ class AnswerContainer extends Component{
     fetch(`/api/v1/answers/${answerId}`)
     .then(response => response.json())
     .then(body => {
-      // console.log(body.id)
-      this.setState({answers: body, question_id: answerId})
+      console.log(body.answers)
+      this.setState({answers: body.answers, question_id: answerId})
     });
     // FETCH ARTICLE BY ID
   }
@@ -65,7 +65,7 @@ class AnswerContainer extends Component{
       )
     })
 
-    console.log(this.state.question_id)
+    console.log(this.state.answers)
     // debugger;
     return(
       <div>
