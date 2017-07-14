@@ -1,12 +1,12 @@
 class AnswersController < ApplicationController
 
-  def new
-    @question = Question.find(params[:question_id])
-    @answer = Answer.new
-  end
+  # def new
+  #   @question = Question.find(params[:question_id])
+  #   # @answer = Answer.new
+  # end
   def create
-    @question = Question.find(params[:question_id])
-    @answer = @question.answers.new(answer_params)
+    @questions = Question.find(params[:question_id])
+    @answer = @questions.answers.new(answer_params)
     if @answer.save
       redirect_to '/questions', notice: "Answer Submitted"
     else

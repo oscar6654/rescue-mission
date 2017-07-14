@@ -4,9 +4,24 @@
 <h4><%=@question.title %></h4>
 <p><%=@question.description %></p>
 
-<%= link_to "Post Answer", new_question_answer_path(@question) %>
-<ul>
+<div id="show" data-id=<%= @question.id %>></div>
+<%= javascript_pack_tag 'application' %>
+
+
+<!-- <h1>Write Answer</h1> -->
+<!-- @question pass in the question_id and @answer is calling the .new.  -->
+<!-- <%=form_for([@question, @answer]) do |f| %>
+
+  <label for="description">Answer</label>
+  <%= f.text_field :description, type: "text"%>
+
+
+  <%= submit_tag "Post Answer", class: 'btn' %>
+<%end%> -->
+
+<!-- <%= link_to "Post Answer", new_question_answer_path(@question) %> -->
+<!-- <ul>
 <% @answers.each do |answer| %>
   <li><%=answer.description%></li>
 <%end%>
-</ul>
+</ul> -->
